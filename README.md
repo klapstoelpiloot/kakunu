@@ -25,5 +25,43 @@ Make sure you start the pigpiod service when running a debug build, because it u
 ```
 
 ## Protocol
+The KlikAanKlikUit protocol is a one-way digital signal with pulses of about 250 microseconds and multiples thereof. Because the communication is one-way, the remote control does not know the state of the devices and the devices do not send feedback to any signal, they only listen. A common KlikAanKlikUit remote control sends the same message 4 times to increase the chance of successful arrival.
 
+The start of a message is indicated with this signal (T is 250 microseconds):
+```
+	 __             
+	|  |________________________________
+
+	|--|-------------------------------|
+	 T              10T
+```
+
+The message ends with:
+```
+	 __             
+	|  |________________________________ _ _ _ _____
+
+	|--|-------------------------------- - - - ----|
+	 T                      40T
+```
+
+A sub-bit '0' is encoded like this:
+```
+	 __ 
+	|  |___
+
+	|--|--|
+	 T  T
+```
+
+
+A sub-bit '1' is encoded like this:
+```
+	 __ 
+	|  |______________
+
+	|--|-------------|
+	 T       5T
+```
+Note that I call these "sub-bits", because every 2 sub-bits need to be combined to reconstruct the actual bit. A 0 bit consists of sub-bits 0 and 1 and a 1 bit consists of sub-bits 1 and 0. The extended version of the protocol (for dimmers) also has sub-bit combinations 0 0 and 1 1 which I combine in the software as a 2 and a 3 respectively. The extended protocol also adds more information bits, but I have not further decoded the signal into more meaningful information as (for now) I don't really need it (but your help to complete this is welcome!). The kakunu tool shows these codes when received and you can use those codes with the kakusend tool to mimic the signals that your remote control generates.
 
