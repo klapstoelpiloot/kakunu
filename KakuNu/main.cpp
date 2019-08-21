@@ -95,6 +95,7 @@ int main(int argc, char* argv[])
 		if(pi < 0)
 		{
 			std::cout << "Error setting up pigpio_if2: " << strerror(errno) << std::endl;
+			std::cout << "Try 'sudo pigpiod' to start the pigpio daemon." << std::endl;
 			return 1;
 		}
 	#else
@@ -105,7 +106,7 @@ int main(int argc, char* argv[])
 			return 1;
 		}
 	#endif
-
+	
 	// Start the clock
 	microclock.Start(pi);
 

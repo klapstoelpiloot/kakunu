@@ -19,12 +19,12 @@ private:
 	// Timings
 	// Anyhting in between these ranges is unsure and thus invalid.
 	// Anything longer than MIN_MEGALONG_US is considered mega long.
-	const uint MIN_SHORT_US = 220;
-	const uint MAX_SHORT_US = 280;
-	const uint MIN_LONG_US = 1200;
-	const uint MAX_LONG_US = 1500;
-	const uint MIN_EXTRALONG_US = 2200;
-	const uint MAX_EXTRALONG_US = 2800;
+	const uint MIN_SHORT_US = 100;
+	const uint MAX_SHORT_US = 500;
+	const uint MIN_LONG_US = 900;
+	const uint MAX_LONG_US = 1800;
+	const uint MIN_EXTRALONG_US = 2000;
+	const uint MAX_EXTRALONG_US = 3200;
 	const uint MIN_MEGALONG_US = 5000;
 
 	// Coding scheme for timings
