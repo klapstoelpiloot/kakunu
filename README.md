@@ -1,5 +1,5 @@
-KlikAanKlikUit RF Communication Tools
-=====================================
+Klik Aan Klik Uit RF Communication Tools (software decoder/encoder)
+===================================================================
 By Pascal van der Heiden, [www.codeimp.com](http://www.codeimp.com)
 
 These tools allow basic recording and control of KlikAanKlikUit devices over RF at 433 MHz. The software is developed for the Raspberry Pi and uses the [pigpio library](http://abyz.me.uk/rpi/pigpio/) as hardware interface.
