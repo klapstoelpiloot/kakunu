@@ -2,7 +2,7 @@ Klik Aan Klik Uit RF Communication Tools (software decoder/encoder)
 ===================================================================
 By Pascal van der Heiden, [www.codeimp.com](http://www.codeimp.com)
 
-These tools allow basic recording and control of KlikAanKlikUit devices over RF at 433 MHz. The software is developed for the Raspberry Pi and uses the [pigpio library](http://abyz.me.uk/rpi/pigpio/) as hardware interface.
+These tools allow basic recording, decoding, encoding and transmission of Klik Aan Klik Uit (KAKU) devices over RF at 433 MHz. The software is developed for the Raspberry Pi and uses the [pigpio library](http://abyz.me.uk/rpi/pigpio/) as hardware interface.
 
 Use **kakunu** to listen on an input pin. This outputs recognized codes to standard out. Use the **kakusend** tool to transmit a code on an output pin. For both tools you can use the --help parameter for more information about any options.
 
@@ -25,7 +25,7 @@ Make sure you start the pigpiod service when running a debug build, because it u
 ```
 
 ## Protocol
-The KlikAanKlikUit protocol is a one-way digital signal with pulses of about 250 microseconds and multiples thereof. Because the communication is one-way, the remote control does not know the state of the devices and the devices do not send feedback to any signal, they only listen. A common KlikAanKlikUit remote control sends the same message 4 times to increase the chance of successful arrival.
+The Klik Aan Klik Uit (KAKU) protocol is a one-way digital signal with pulses of about 250 microseconds and multiples thereof. Because the communication is one-way, the remote control does not know the state of the devices and the devices do not send feedback to any signal, they only listen. A common Klik Aan Klik Uit remote control sends the same message 4 times to increase the chance of successful arrival.
 
 The start of a message is indicated with this signal (T is 250 microseconds):
 ```
